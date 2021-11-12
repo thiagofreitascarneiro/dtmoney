@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     --red: #e52e4d;
     --blue: #5429cc;
 
+    --green: #33cc95;
+
     --blue-light: #6933ff;
 
     --text-title: #363f5f;
@@ -25,7 +27,7 @@ html {
     //Quando o usuario estiver com uma tela até 1080 px de largura, eu vou diminuir o font-size 
     //e deixar em 93.75%
     @media (max-width: 1080px){
-        font-size: 93.75%; // dessa forma a fonte aumenta e diminuide acordo com a tela do usuario.
+        font-size: 93.75%; // dessa forma a fonte aumenta e diminui de acordo com a tela do usuario.
     }
 
     @media (max-width: 720px) {
@@ -55,6 +57,29 @@ button {
 [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.react-modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.react-modal-content {
+    width: 100%;
+    max-width: 576px;
+    background: var(--background);
+    padding: 3rem;
+    position: relative;
+    border-radius: 0.24rem;
 }
 
 `
