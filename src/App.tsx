@@ -4,8 +4,10 @@ import { GlobalStyle } from "./styles/global";
 
 import Modal from 'react-modal'
 import { useState } from "react";
+import { createContext } from 'react';
 
 import { NewTransactionModal } from './components/NewTransactionModal'
+import { TransactionsContext, TransactionsProvider } from "./TransactionsContext";
 
 Modal.setAppElement('#root'); // recomendado pela documentação pra falar 
                               // qual que é o elemento root para aplicação
@@ -13,7 +15,7 @@ Modal.setAppElement('#root'); // recomendado pela documentação pra falar
 
 export function App() {
   const [isNewTransaction, setIsNewTransaction] = useState(false);
-
+  
   function handleOpenNewTransaction() {
       setIsNewTransaction(true)
   }
@@ -24,8 +26,9 @@ export function App() {
 
 
   return (
-    <>
+    <TransactionsProvider>
       <Header onOpenNewTransaction={handleOpenNewTransaction} />
+      
       <Dashboard/>
 
       <NewTransactionModal 
@@ -34,7 +37,7 @@ export function App() {
       />
 
       <GlobalStyle />
-    </>
+    </TransactionsProvider>
   );
 }
 
