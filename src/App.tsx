@@ -7,7 +7,7 @@ import { useState } from "react";
 import { createContext } from 'react';
 
 import { NewTransactionModal } from './components/NewTransactionModal'
-import { TransactionsContext, TransactionsProvider } from "./TransactionsContext";
+import { TransactionsProvider } from "./components/hooks/useTransactions";
 
 Modal.setAppElement('#root'); // recomendado pela documentação pra falar 
                               // qual que é o elemento root para aplicação
